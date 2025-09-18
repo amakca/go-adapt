@@ -1,4 +1,4 @@
-module adapter
+module github.com/amakca/go-adapt
 
 go 1.22.5
 
