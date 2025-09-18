@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	adapter "adapter/adapt"
+	adapter "github.com/amakca/go-adapt/adapt"
 )
 
 func main() {

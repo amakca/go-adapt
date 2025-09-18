@@ -11,7 +11,7 @@ type adapter struct {
 	logger *log.Logger
 }
 
-func NewAdapter() adapter {
+func New() adapter {
 	return adapter{logger: log.New(os.Stdout, "adapter ", log.LstdFlags)}
 }
 
