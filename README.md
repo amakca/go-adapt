@@ -149,7 +149,7 @@ func GenerateStructYAML(input any) (string, error)
 type Config struct {
     Server struct {
         Host string `json:"host" rst-default:"localhost" info:"Хост сервера"`
-        Port int    `json:"port" rst-min:"1" rst-max:"65535" rst-default:"8080" info:"Порт сервера"`
+        Port int    `json:"port" rst-min:"4000" rst-max:"4010" rst-default:"4002" info:"Порт сервера"`
     } `json:"server" info:"Настройки сервера"`
 }
 
@@ -159,7 +159,21 @@ if err != nil {
     log.Fatal(err)
 }
 
-fmt.Println(yaml)
+err = os.WriteFile("myFile.yaml", []byte(yaml), 0644)
+if err != nil {
+	log.Fatal(err)
+}
+```
+
+Пример результата (содержимое файла `myFile.yaml`):
+
+```yaml
+# Настройки сервера
+  server:
+# Хост сервера; значение по умолчанию - localhost
+    host: ""
+# Порт сервера; минимальное значение - 4000; максимальное значение - 4010; значение по умолчанию - 4002
+    port: 0
 ```
 
 ## Особенности работы
